@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Day 1
+## Rules of JSX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+###  Return a single root element:
+- To return multiple elements from a component, wrap them with a single parent tag. For example, you can use a <div>. If you don’t want to add an extra <div> to your markup, you can write <> and </> instead. This empty tag is called a Fragment.
 
-## Available Scripts
+### Close all the tags
+- JSX requires tags to be explicitly closed: self-closing tags like <img> must become <img />.
 
-In the project directory, you can run:
+### camelCase all most of the things!
+- For example, instead of stroke-width you use strokeWidth.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Day 2
+## All about JSX
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- JSX attributes inside quotes are passed as strings.
+- Curly braces let you bring JavaScript logic and variables into your markup.
+- They work inside the JSX tag content or immediately after = in attributes.
+- {{ and }} is not special syntax: it’s a JavaScript object tucked inside JSX curly braces.
 
-### `npm test`
+# Day 3
+## Props 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Props let you think about parent and child components independently. For example, you can change the person or the size props inside Profile without having to think about how Avatar uses them. Similarly, you can change how the Avatar uses these props, without looking at the Profile.
 
-### `npm run build`
+- You can think of props like “knobs” that you can adjust. They serve the same role as arguments serve for functions—in fact, props are the only argument to your component! React component functions accept a single argument, a props object.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- To pass props, add them to the JSX, just like you would with HTML attributes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- To read props, use the function Avatar({ person, size }) ```destructuring syntax```.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- You can specify a default value like size = 100, which is used for missing and undefined props.
 
-### `npm run eject`
+- You can forward all props with <Avatar {...props} /> JSX spread syntax, but don’t overuse it!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Nested JSX like <Card><Avatar /></Card> will appear as Card component’s children prop.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Props are read-only snapshots in time: every render receives a new version of props.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- You can’t change props. When you need interactivity, you’ll need to set state.
+- ```Props are read only i.e they are not changed dynamically```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Day 4
+## Conditional Rendering
+- Conditional rendering in React is the process of displaying different content or components based on certain conditions. It allows you to control what appears in your user   interface dynamically, depending on variables, state, or other factors. This helps you build more interactive and responsive user interfaces by showing or hiding elements as needed.
