@@ -2,7 +2,7 @@
 ## Rules of JSX
 
 ###  Return a single root element:
-- To return multiple elements from a component, wrap them with a single parent tag. For example, we can use a <div>. If we don’t want to add an extra <div> to wer markup, we can write <> and </> instead. This empty tag is called a Fragment.
+- To return multiple elements from a component, wrap them with a single parent tag. For example, we can use a ```<div>``` . If we don’t want to add an extra <div> to wer markup, we can write <> and </> instead. This empty tag is called a Fragment.
 
 ### Close all the tags
 - JSX requires tags to be explicitly closed: self-closing tags like <img> must become <img />.
